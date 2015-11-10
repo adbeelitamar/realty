@@ -4,6 +4,13 @@
   - unless @vendors
     Something went wrong trying to fetch vendors listing
   - else
+    .well.well-sm
+      = form_tag vendors_path, method: :get, class: 'navbar-form navbar-left', role: :search do
+        .form-group
+          = label_tag :query, 'Search:'
+          = text_field_tag :query, '', :placeholder => "Search", class: 'form-control'
+          = submit_tag :submit, class: 'btn btn-primary'          
+      .clearfix
     %table.table.table-striped.table-hover
       %thead
         %tr
