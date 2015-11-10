@@ -1,0 +1,18 @@
+development:
+  cloud_name: houzio
+  api_key: '146846228136533'
+  api_secret: 72vihIxmyqsYzdJJhwhXnlq7Fyw
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: huticv7yi
+  api_key: '849695787823638'
+  api_secret: q1K_liwg9LiwRBLsrueLRBuDazU
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: huticv7yi
+  api_key: '849695787823638'
+  api_secret: q1K_liwg9LiwRBLsrueLRBuDazU
+  enhance_image_tag: true
+  static_image_support: false

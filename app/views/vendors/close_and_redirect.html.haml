@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %title= @msg
+  %body
+    %h3= @msg
+    :javascript
+      setTimeout(function(){
+          if(window.opener == null){
+            window.location = '#{@url}';
+          }else{
+            window.opener.location = '#{@url}';
+            window.close();
+          }
+      }, 10000);

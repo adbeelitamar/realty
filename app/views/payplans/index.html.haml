@@ -1,0 +1,15 @@
+.page-header
+  %h1 Pay Plans
+.bs-component
+  .row
+    .col-md-6
+      %table.table.table-striped.table-hover
+        %thead
+          %tr
+            %th Name
+            %th    
+          %tbody
+            - @pay_plans.each do |plan|
+              %tr
+                %td= plan.name
+                %td

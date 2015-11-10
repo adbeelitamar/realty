@@ -1,0 +1,27 @@
+.page-header
+  %h1 Company Settings
+.bs-component
+  - unless @company
+    Something went wrong trying to fetch company info
+  - else
+    .row
+      .col-lg-6
+        = form_for @company, html: { class: 'form-horizontal' }  do |f|
+          %fieldset
+            = image_tag current_user.company.logo_url, width: '100', class: 'thumbnail'
+            .form-group
+              .col-sm-10
+                = f.file_field :logo, :class => 'form-control'   
+              .col-sm-2
+                = f.submit 'Upload', :class => 'btn btn-primary'
+    .row
+      .col-lg-12
+        %h4 Company Name
+        %p= @qb_company.company_name
+        %br
+        %h4 Company Address
+        - if @qb_company.company_address.present?
+          %address
+            = @qb_company.company_address.line1
+            = @qb_company.company_address.line2 if @qb_company.company_address.line2
+            = "#{@qb_company.company_address.city} #{@qb_company.company_address.country_sub_division_code} #{@qb_company.company_address.postal_code}"

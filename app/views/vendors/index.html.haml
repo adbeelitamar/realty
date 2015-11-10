@@ -1,0 +1,18 @@
+.page-header
+  %h1 Vendors
+.bs-component
+  - unless @vendors
+    Something went wrong trying to fetch vendors listing
+  - else
+    %table.table.table-striped.table-hover
+      %thead
+        %tr
+          %th Name
+          %th Email
+          %th    
+        %tbody
+          - @vendors.each do |v|
+            %tr
+              %td= v.display_name
+              %td= v.email_address.try(:address)
+              %td
